@@ -8,7 +8,7 @@ import BrandGrid from "@/components/BrandGrid/BrandGrid";
 export default function AboutPage() {
   return (
     <div className={styles.aboutPage}>
-      {/* HERO SECTION */}
+      {/* HERO0 SECTION */}
       <LeftBar></LeftBar>
       <HeroLayout></HeroLayout>
       <section className={styles.heroSection}>
