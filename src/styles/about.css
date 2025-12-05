@@ -1,0 +1,60 @@
+.container {
+  max-width: 1280px;
+  width: 90%;
+  margin: auto;
+}
+
+/* ✅ About Banner */
+.about-banner {
+  width: 100%;
+  height: 55vh;
+  background: url('/images/about-bg.png') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 50px;
+  color: #fff;
+}
+.about-banner h1 {
+  font-size: 70px;
+  font-weight: 900;
+}
+.about-banner p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* ✅ Growth Section */
+.growth-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 0;
+}
+.growth-left {
+  width: 40%;
+}
+.growth-left h2 {
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.growth-left p {
+  width: 85%;
+  font-size: 15px;
+}
+
+.growth-right {
+  width: 55%;
+  font-size: 14px;
+  line-height: 1.7em;
+}
+
+/* ✅ Partners Section Title */
+.partners-section {
+  padding: 80px 0;
+  text-align: left;
+}
+.partners-section h2 {
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,83 @@
+.blog-page {
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+/* Header Section */
+.blog-header {
+    background-color: #000;
+    color: #fff;
+    padding: 120px 0 80px;
+    
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-header::before {
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0.03) 75%, transparent 75%, transparent);
+    background-size: 20px 20px;
+    opacity: 0.5;
+}
+
+.blog-header-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.page-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: #ccc;
+    max-width: 600px;
+}
+
+/* Blog Grid Section */
+.blog-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding-bottom: 60px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+        /* 1 Column on mobile */
+    }
+
+    .page-title {
+        font-size: 36px;
+    }
+}

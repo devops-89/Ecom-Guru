@@ -1,0 +1,102 @@
+
+    .lab {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.lab-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/lab-bg.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center top;
+  filter: brightness(0.35);
+  z-index: 0;
+  
+  
+}
+
+
+/****** LEFT + RIGHT ******/
+.lab-left {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+.lab-right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+
+
+.lab-image img {
+  width: 450px;
+  border: 10px solid #fff;
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: 0.8s ease;
+}
+
+.lab-image.show img {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.lab-text {
+  color: #fff;
+  opacity: 0;
+  transform: translateX(60px);
+  transition: 0.8s ease;
+}
+
+.lab-text.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.lab-text h5 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.lab-text h2 {
+  font-size: 55px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.lab-text p {
+  width: 85%;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+
+.take-look-btn {
+  font-weight: 700;
+  border: 3px solid #fff;
+  padding: 15px 50px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.take-look-btn:hover {
+  background: #fff;
+  color: #000;
+}

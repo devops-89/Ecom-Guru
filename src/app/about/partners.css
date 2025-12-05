@@ -1,0 +1,77 @@
+.partnersWrapper {
+  background: #000;
+  color: #fff;
+  padding: 120px 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.partnersHeader {
+  margin-bottom: 120px;
+  max-width: 1200px;
+  width: 100%;
+}
+.partnersHeader h2 {
+  font-size: 45px;
+  font-weight: 900;
+  margin: 0px 0px 40px;
+}
+.partnersHeader p {
+  font-size: 16px;
+  color: #ffffff;
+  margin:0px 0px 16px;
+}
+.partnersGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  gap: 80px 60px;                   
+  width: 100%;
+  max-width: 1200px;
+}
+.partnerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+.partnerLogo {
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+.partnerLogo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+.partnerText {
+  font-size: 14px;
+  color: #ffffff;
+   margin: 0px 0px 25px; 
+}
+@media (max-width: 900px) {
+  .partnersGrid {
+    grid-template-columns: 1fr;     
+    gap: 60px;
+  }
+  .partnersWrapper {
+    padding: 80px 5%;
+  }
+  .partnersHeader h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .partnersHeader p {
+    text-align: center;
+    font-size: 18px;
+  }
+  .partnerLogo {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  .partnerCard {
+    text-align: center;
+  }
+}
