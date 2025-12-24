@@ -1,21 +1,24 @@
 .brand-grid {
   width: 100%;
   background: #fff;
-  padding: 90px 0;
+  padding: 60px 20px;
+  box-sizing: border-box;
 }
 
 .brand-logos {
-  width: 95%;
+  width: 100%;
+  max-width: 1200px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
 .brand-card {
-  width: 210px;
-  height: 140px;
+  flex: 1 1 ;
+  max-width: 210px;
+  height: 100px;
   background: #fff;
   border-radius: 12px;
   display: flex;
@@ -25,6 +28,8 @@
   transform: translateY(30px);
   transition: 0.6s ease;
   filter: drop-shadow(0 4px 25px rgba(0, 0, 0, 0.08));
+  position: relative;
+  overflow: hidden;
 }
 
 .brand-card.show {
@@ -33,19 +38,54 @@
 }
 
 .brand-card img {
-  height: 60px;
+  height: 80px;
   filter: grayscale(100%);
   transition: 0.3s;
+  opacity: 0.9;
 }
 
 .brand-card:hover img {
   filter: grayscale(0%);
+  opacity: 0;
   transform: scale(1.05);
 }
 
+.brand-card p {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+}
+
+.brand-card:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* responsive */
 @media (max-width: 1024px) {
-  .brand-logos {
-    flex-wrap: wrap;
-    justify-content: center;
+  .brand-card {
+    flex: 1 1 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-card {
+    flex: 1 1 140px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-card {
+    flex: 1 1 90%;
+    height: 80px;
   }
 }

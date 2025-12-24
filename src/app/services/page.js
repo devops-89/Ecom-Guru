@@ -11,22 +11,18 @@ export default function ServicesSection() {
   return (
     <div className={styles.serviceSection}>
 
-      {/* HERO SECTION */}
       <LeftBar/>
       <HeroLayout/>
       <section className={styles.heroSection}>
-        <h1>Services</h1>
+        <h2>Services</h2>
         <p>
           Boost your e-commerce sales instantly and rapidly with the eComguru
         </p>
       </section>
 
-      {/* GROWTH SECTION */}
       <section className={styles.growthSection}>
         <div className={styles.left}>
-          <h2>
-            360° SALES <br /> SOLUTIONS
-          </h2>
+          <h2>360° SALES SOLUTIONS</h2>
           <p>
             The eComguru is the perfect partner to help grow your e-commerce business. 
             We offer a full range of services and pride ourselves on getting results.
@@ -51,13 +47,7 @@ export default function ServicesSection() {
         </div>
       </section>
        <div className={styles.horizontalLine}></div>
-      {/* Services Cards Component */}
       <Services />
-
-      {/* Horizontal Line */}
-      
-
-      {/* Case Studies & Brands */}
       <CaseStudies />
       <BrandGrid />
 

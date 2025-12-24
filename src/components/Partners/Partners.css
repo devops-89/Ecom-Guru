@@ -1,14 +1,14 @@
-
- .partners {
+.partners {
   width: 100%;
-  padding: 100px 0 120px;
+  padding: 100px 160px 120px 50px;
   background: #ffffff;
-  text-align: center;
+  text-align: left;
 }
 
 .partners-title span {
-  font-size: 65px;
-  font-weight: 900;
+  font-size: 45px;
+  font-weight: 800;
+  font-family: 'Segoe UI';
   text-transform: uppercase;
   color: #212529;
   letter-spacing: 1px;
@@ -17,15 +17,14 @@
 .partners-row {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
   margin-top: 50px;
   flex-wrap: wrap;
 }
 
-
 .partner-card {
-  width: 350px;
-  height: 150px;
+  width: 250px;
+  height: 100px;
   background: #ffffff;
   border-radius: 8px;
   display: flex;
@@ -34,7 +33,9 @@
   opacity: 0;
   transform: translateY(40px);
   transition: 0.5s ease;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
 }
 
 .partner-card.show {
@@ -43,7 +44,7 @@
 }
 
 .partner-card img {
-  max-width: 140px;
+  max-width: 90px;
   filter: grayscale(100%);
   opacity: 0.9;
   transition: 0.4s;
@@ -51,6 +52,95 @@
 
 .partner-card:hover img {
   filter: grayscale(0%);
-  opacity: 1;
+  opacity: 0;
   transform: scale(1.05);
+}
+
+/* text overlay that shows on hover */
+.partner-card p {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+}
+
+/* show text on hover */
+.partner-card:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .partners {
+    padding: 80px 60px 100px;
+  }
+
+  .partners-title span {
+    font-size: 30px;
+  }
+
+  .partners-row {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners {
+    padding: 70px 20px 90px;
+    text-align: center;
+  }
+
+  .partners-title span {
+    font-size: 26px;
+  }
+
+  .partners-row {
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .partner-card {
+    width: 180px;
+    height: 80px;
+  }
+
+  .partner-card img {
+    max-width: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners {
+    padding: 60px 16px 80px;
+  }
+
+  .partners-title span {
+    font-size: 22px;
+  }
+
+  .partners-row {
+    gap: 15px;
+  }
+
+  .partner-card {
+    width: 100%;
+    max-width: 260px;
+    height: 75px;
+  }
+
+  .partner-card img {
+    max-width: 50px;
+  }
+
+  .partner-card p {
+    font-size: 10px;
+  }
 }

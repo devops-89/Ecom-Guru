@@ -1,0 +1,183 @@
+.redChief-page {
+    min-height: 100vh;
+}
+
+.redChief-header {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.redChief-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.03) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.03) 50%,
+            rgba(255, 255, 255, 0.03) 75%,
+            transparent 75%,
+            transparent);
+    background-size: 20px 20px;
+    opacity: 0.5;
+}
+
+.redChief-header-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.page-title {
+    font-size: 4.9rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 300;
+    color: #ccc;
+    max-width: 65%;
+}
+
+.redChiefTop {
+    margin-bottom: 120px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 10% 0px 10% 1%;
+}
+
+.redChiefTop h2 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 54px;
+    margin-bottom: 3%;
+    text-transform: uppercase;
+
+}
+
+.redChiefTop p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: 'Segoe UI';
+    margin: 0px 0px 16px;
+}
+
+.bannerImg {
+    max-width: 100%;
+}
+
+.redChief-grid {
+    display: flex;
+    margin: 2%;
+    gap: 2.5%;
+}
+
+.redChief01 {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.redChief02 {
+    width: 100%;
+}
+
+.redChief-containGrid {
+    display: flex;
+}
+
+.redChief-containGrid h2 {
+    font-size: 45px;
+    text-transform: uppercase;
+    margin-bottom: 7%;
+    color: #212529;
+    line-height: 54px;
+    font-weight: 800;
+}
+
+.redChief-containGrid h6 {
+    color: #808080;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 30px;
+}
+
+.redChief-grid01 {
+    margin: 15% 0% 11% 2%;
+    max-width: 40%;
+}
+
+.redChief-grid02 h2 {
+    margin-left: 50%;
+}
+
+.redChief-grid02 h6 {
+    margin-left: 20%;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+    .page-title {
+        font-size: 3.5rem;
+    }
+
+    .page-subtitle {
+        max-width: 80%;
+    }
+
+    .redChiefSection {
+        margin-top: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .redChief-header {
+        min-height: auto;
+        padding: 80px 0 60px;
+    }
+
+    .page-title {
+        font-size: 42px;
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .redChiefSection {
+        flex-direction: column;
+        margin: 100px 30px 0;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 30px;
+    }
+
+
+}

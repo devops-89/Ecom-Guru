@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.blog9-header {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    height: auto;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.blog9-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.03) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.03) 50%,
+            rgba(255, 255, 255, 0.03) 75%,
+            transparent 75%);
+    background-size: 20px 20px;
+    opacity: 0.5;
+}
+
+.blog9-header-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.page-title {
+    font-size: 4.9rem;
+    font-weight: 900;
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+.blog9-inner-page {
+    padding: 110px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog9-author {
+    max-width: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.blog9-author img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.author-name {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+}
+
+.author-date {
+    font-size: 12px;
+    color: #777;
+}
+
+.blog9-inner-header {
+    max-width: 80%;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.blog9-inner-content {
+    max-width: 80%;
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.85;
+    color: #212529;
+}
+
+.blog9-inner-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.blog9-inner-content p {
+    margin-bottom: 22px;
+}
+
+.blog9-inner-content h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 40px 0 14px;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+    .blog9-header {
+        padding: 100px 0 60px;
+        min-height: 80vh;
+    }
+
+    .page-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog9-header {
+        padding: 80px 0 50px;
+        min-height: 60vh;
+    }
+
+    .page-title {
+        font-size: 36px;
+    }
+
+    .blog9-inner-page {
+        padding: 80px 16px;
+    }
+
+    .blog9-inner-header h1 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog9-header {
+        padding: 60px 0 40px;
+        min-height: 50vh;
+    }
+
+    .page-title {
+        font-size: 30px;
+    }
+
+    .blog9-inner-header h1 {
+        font-size: 22px;
+    }
+}

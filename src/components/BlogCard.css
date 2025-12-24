@@ -2,7 +2,7 @@
     background: #fff;
     border: 1px solid #eee;
     border-radius: 8px;
-    /* Optional: rounded corners */
+    height: auto;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -16,10 +16,8 @@
 
 .blog-image-container {
     width: 100%;
-    height: 200px;
-    /* Adjust height as needed */
+    height: 400px;
     background-color: #3b6db0;
-    /* Blue placeholder color from image */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +27,7 @@
 .blog-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: calc();
 }
 
 .blog-image-placeholder {
@@ -78,27 +76,36 @@
 }
 
 .blog-title {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 800;
     margin-bottom: 10px;
     color: #000;
 }
 
 .blog-description {
     font-size: 14px;
-    color: #555;
+    color: #212529;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 1rem;
     flex-grow: 1;
+
+    /* for description slice */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: calc(1.5em * 3);
 }
 
 .read-more-btn {
     display: inline-block;
     background-color: #000;
     color: #fff;
-    padding: 10px 20px;
+    padding: 20px 50px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     align-self: flex-start;
     transition: background-color 0.3s;
@@ -106,5 +113,6 @@
 }
 
 .read-more-btn:hover {
-    background-color: #333;
+    background-color: #FFD94A;
+    color: #000;
 }

@@ -2,10 +2,11 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  background: url('/images/hero-bg.gif') center/cover no-repeat;
+  background: rgb(19, 19, 19);
   overflow: hidden;
   color: #fff;
 }
+
 .hero-header {
   position: absolute;
   top: 25px;
@@ -16,8 +17,35 @@
   align-items: center;
   z-index: 3000;
 }
+
 .hero-logo {
   width: 170px;
+}
+
+.center-image {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-bg-gif {
+  width: 90vh;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-strip {
+  width: 60%;
+  max-width: 750px;
+  position: relative;
+  z-index: 2;
 }
 
 .menu-btn {
@@ -34,27 +62,15 @@
   cursor: pointer;
 }
 
-
-
 .right-panel {
   position: absolute;
   right: 35px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 3000;
+  transition: 0.3s ease;
 }
 
-.center-image {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-strip {
-  width: 60%;
-  max-width: 750px;
-}
 .yellow-screen {
   position: fixed;
   inset: 0;
@@ -62,9 +78,15 @@
   animation: yellowSlide 0.45s ease forwards;
   z-index: 2500;
 }
+
 @keyframes yellowSlide {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .menu-overlay {
@@ -80,28 +102,28 @@
   transition: .4s ease;
   z-index: 2600;
 }
+
 .menu-overlay.show {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
-.menu-btn.hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
+.menu-btn.hide,
 .right-panel.hide {
   opacity: 0;
-  pointer-events: none;
 }
+
 .menu-list {
   list-style: none;
   text-align: center;
   padding: 0;
 }
+
 .menu-list li {
   margin: 15px 0;
 }
+
 .menu-list a {
   font-size: 38px;
   font-weight: 900;
@@ -109,10 +131,12 @@
   color: #fff;
   transition: 0.25s ease;
 }
+
 .menu-list a:hover {
   color: #FFDE39;
   transform: scale(1.05);
 }
+
 .close-btn {
   position: absolute;
   top: 32px;
@@ -132,22 +156,51 @@
   color: #FFDE39;
   border-color: #FFDE39;
 }
-.menu-overlay.show {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+
+@media (max-width: 1024px) {
+  .hero-bg-gif {
+    width: 60vh;
+  }
+
+  .hero-strip {
+    width: 70%;
+    max-width: 600px;
+  }
+
+  .menu-list a {
+    font-size: 32px;
+  }
 }
 
-.right-panel {
-  transition: .3s ease;
+@media (max-width: 768px) {
+
+  .hero-header {
+    left: 20px;
+    right: 20px;
+  }
+
+  .hero-bg-gif {
+    width: 40vh;
+  }
+
+  .hero-strip {
+    content: url("/images/small-screen-mob-banner.png");
+    width: 85%;
+    max-width: 320px;
+  }
+
+  .menu-list a {
+    font-size: 28px;
+  }
 }
 
-.menu-overlay.show ~ .right-panel,
-.menu-overlay.show ~ .left-options {
-  opacity: 0;
-  pointer-events: none;
-}
+@media (max-width: 480px) {
+  .hero-strip {
+    width: 90%;
+    max-width: 280px;
+  }
 
-@media(max-width:768px){
-  .menu-list a { font-size: 28px; }
+  .hero-bg-gif {
+    width: 35vh;
+  }
 }

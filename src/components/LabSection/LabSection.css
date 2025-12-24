@@ -1,102 +1,148 @@
-
-    .lab {
+.lab {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
+  padding: 80px;
+  overflow: hidden;
 }
 
-
-
+/* background */
 .lab-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/images/lab-bg.jpg');
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center top;
+  background: url("/images/lab-bg.jpg") center / cover no-repeat;
   filter: brightness(0.35);
   z-index: 0;
-  
-  
 }
 
-
-/****** LEFT + RIGHT ******/
-.lab-left {
-  width: 50%;
+/* columns */
+.lab-left,
+.lab-right {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
-  z-index: 5;
-}
-
-.lab-right {
-  width: 50%;
-  display: flex;
   align-items: center;
-  z-index: 5;
 }
 
+/* image wrapper */
+.lab-image {
+  position: relative;
+}
 
+/* image */
 .lab-image img {
-  width: 450px;
+  width: 100%;
+  max-width: 330px;
   border: 10px solid #fff;
-  opacity: 0;
-  transform: translateX(-60px);
-  transition: 0.8s ease;
+  position: relative;
+  /* ❗ absolute hata diya */
 }
 
-.lab-image.show img {
-  opacity: 1;
-  transform: translateX(0);
-}
-
+/* text */
 .lab-text {
+  max-width: 420px;
   color: #fff;
-  opacity: 0;
-  transform: translateX(60px);
-  transition: 0.8s ease;
 }
-
-.lab-text.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
 
 .lab-text h5 {
+  color: #FFFFFF;
   font-size: 20px;
+  font-family: "Fjalla One", sans-serif;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
 
 .lab-text h2 {
-  font-size: 55px;
-  font-weight: 900;
-  text-transform: uppercase;
+  color: #FFFFFF;
+  font-size: 50px;
+  font-weight: 800;
+  font-family: 'Segoe UI';
   margin-bottom: 25px;
 }
 
 .lab-text p {
-  width: 85%;
-  font-size: 18px;
+  color: #FFFFFF;
+  font-size: 16px;
   line-height: 1.6;
+  font-weight: 300;
+  font-family: 'Segoe UI';
   margin-bottom: 40px;
 }
 
-
+/* button */
 .take-look-btn {
-  font-weight: 700;
-  border: 3px solid #fff;
-  padding: 15px 50px;
+  font-size: 12px;
+  display: inline-block;
+  border: 2px solid #fff;
+  padding: 18px 45px;
   color: #fff;
+  font-weight: 700;
   text-decoration: none;
   transition: 0.3s ease;
 }
 
 .take-look-btn:hover {
-  background: #fff;
-  color: #000;
+  background: rgba(0, 0, 0, 0.8);
+  color: #FFDE39;
+  border-color: #fff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .lab {
+    grid-template-columns: 1fr;
+    padding: 60px 30px;
+    gap: 50px;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .lab-left,
+  .lab-right {
+    justify-content: center;
+  }
+
+  .lab-text {
+    max-width: 100%;
+  }
+
+  .lab-image img {
+    max-width: 280px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .lab {
+    padding: 40px 16px;
+    gap: 40px;
+  }
+
+  .lab-image img {
+    max-width: 220px;
+    border-width: 6px;
+  }
+
+  .lab-text h5 {
+    font-size: 16px;
+  }
+
+  .lab-text h2 {
+    font-size: 28px;
+  }
+
+  .lab-text p {
+    font-size: 14px;
+  }
+
+  .take-look-btn {
+    padding: 14px 32px;
+    font-size: 13px;
+  }
 }

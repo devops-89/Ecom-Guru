@@ -6,52 +6,68 @@
 }
 
 .heroSection {
-  height: 100vh;
-  /* background: url('/images/image.png') center/cover no-repeat; */
+  min-height: 100vh;
+  height: auto;
   background: #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 60px;
+  padding: 120px 60px;
   color: #fff;
 }
-.heroSection h1 {
-  font-size: 4.6rem;
-  font-weight: 900;
-  margin-bottom: 0px;
+
+.heroSection h2 {
+  font-size: 88px;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
+
 .heroSection p {
-  font-size: 1rem;
+  font-size: 18px;
+  font-weight: 300;
   width: 50%;
-  line-height: 1.5;
+  line-height: 27px;
 }
+
 .growthSection {
   display: flex;
-   margin-left:50px;
-   margin-right: 50px;
-   margin-top:200px;
+  gap: 40px;
+  margin: 200px 50px;
   justify-content: space-between;
-  
-  height: 90vh;
+  height: auto;
 }
+
+.left,
+.right {
+  flex: 1;
+}
+
 .left h2 {
-  font-size: 40px;
-  color:#212529;
-  width: 500px;
-  /* margin:0px 0px 40px; */
-  font-weight: 900;
+  font-size: 45px;
+  color: #212529;
+  max-width: 500px;
+  line-height: 54px;
+  font-weight: 800;
 }
-.left p {
+
+.left h6 {
   margin-top: 5px;
-  color:#808080;
-  width: 90%;
-  line-height: 1.7;
+  color: #808080;
+  max-width: 90%;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 30px;
 }
+
 .right p {
+  color: #212529;
   margin-left: 20px;
   margin-bottom: 20px;
-  line-height: 1.7;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
 }
+
 .partnersIntro {
   background: #000;
   padding: 80px 12%;
@@ -63,9 +79,67 @@
   font-weight: 900;
   margin-bottom: 50px;
 }
-@media(max-width:768px){
-  .heroSection h1 { font-size: 3rem; }
-  .heroSection p { width: 90%; }
-  .growthSection { flex-direction: column; padding: 60px 8%; }
- 
+
+/* responsive */
+@media (max-width: 1024px) {
+  .heroSection h2 {
+    font-size: 64px;
+  }
+
+  .heroSection p {
+    width: 70%;
+  }
+
+  .growthSection {
+    margin: 150px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 80px 20px;
+    min-height: auto;
+  }
+
+  .heroSection h2 {
+    font-size: 42px;
+  }
+
+  .heroSection p {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .growthSection {
+    flex-direction: column;
+    margin: 100px 20px;
+    gap: 30px;
+  }
+
+  .right p {
+    margin-left: 0;
+  }
+
+  .partnersIntro {
+    padding: 60px 20px;
+  }
+
+  .partnersIntro h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection h2 {
+    font-size: 34px;
+  }
+
+  .left h2 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .left h6 {
+    font-size: 15px;
+  }
 }

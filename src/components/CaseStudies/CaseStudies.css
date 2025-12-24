@@ -1,20 +1,16 @@
-
- .case-studies {
+.case-studies {
   width: 100%;
   background: #000;
-  padding: 120px 0;
-  text-align: center;
+  padding: 90px 0;
 }
 
 .case-title {
-  font-size: 70px;
+  font-size: 35px;
   font-weight: 900;
   color: #ffffff;
-  margin: 0px 0px 40px;
-  padding: 0px 0px 0px 15px;
+  margin-bottom: 50px;
+  padding-left: 55px;
   text-align: left;
-  width: 90%;
-  margin-inline: auto;
 }
 
 .case-wrapper {
@@ -22,16 +18,19 @@
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px 30px;
+  gap: 70px 30px;
 }
 
 .case-card {
   position: relative;
-  overflow: hidden;
+  width: 100%;
   cursor: pointer;
   opacity: 0;
   transform: translateY(40px);
   transition: 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .case-card.show {
@@ -40,24 +39,110 @@
 }
 
 .case-card img {
-  width: 100%;
+  width: 80%;
   height: 380px;
   object-fit: cover;
+  display: block;
   transition: 0.4s ease;
-  filter: brightness(0.85);
+  filter: brightness(0.8);
 }
 
 .case-card:hover img {
-  transform: scale(1.07);
+  transform: scale(1.05);
   filter: brightness(1);
 }
 
 .case-name {
   position: absolute;
-  bottom: 15px;
-  left: 20px;
+  bottom: 95px;
+  left: -30px;
   color: #fff;
+  font-family: 'Segoe UI';
   font-size: 28px;
-  font-weight: 900;
+  font-weight: 800;
   text-transform: capitalize;
+  pointer-events: none;
+}
+
+.case-detail {
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  bottom: 60px;
+  left: 2px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  border-bottom: 2px solid #fff;
+  display: none;
+}
+
+.case-card:hover .case-detail {
+  display: block;
+}
+
+.case-detail:hover {
+  color: #FFD94A;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .case-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .case-card img {
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .case-title {
+    font-size: 28px;
+    padding-left: 25px;
+  }
+
+  .case-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .case-card {
+    align-items: center;
+    /* 🔥 center cards */
+    text-align: center;
+  }
+
+  .case-card img {
+    width: 100%;
+    max-width: 320px;
+    height: 300px;
+  }
+
+  .case-name {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  .case-detail {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-top: 6px;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .case-card img {
+    height: 240px;
+    max-width: 280px;
+  }
+
+  .case-name {
+    font-size: 18px;
+  }
 }

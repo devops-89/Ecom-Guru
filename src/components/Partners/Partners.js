@@ -23,6 +23,8 @@
 //   );
 // }
 "use client";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 import './Partners.css';
 import { useEffect } from "react";
 
@@ -41,19 +43,25 @@ export default function Partners() {
     });
   }, []);
 
+   useEffect(() => {
+      AOS.init({ duration: 1000 }); 
+    }, []);
+
   return (
     <section className="partners">
       <h2 className="partners-title">
         <span>OUR PARTNERS</span>
       </h2>
-
-      <div className="partners-row">
+      
+      <div className="partners-row" data-aos="fade-up">
         {partners.map((p, i) => (
-          <div key={i} className="partner-card">
-            <img src={p.img} alt={p.name} />
-          </div>
-        ))}
+        <div key={i} className="partner-card" >
+          <img src={p.img} alt={p.name} />
+          <p className="partner-text">{p.name}</p>
+        </div>
+         ))}
       </div>
+
     </section>
   );
 }

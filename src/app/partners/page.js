@@ -10,13 +10,11 @@ export default function PartnersSection() {
     <div className={styles.partnerSection}>
         <LeftBar/>
         <HeroLayout/>
-      {/* HERO SECTION */}
       <section className={styles.heroSection}>
         <h1>Partners</h1>
         <p>Your e-commerce business growth is our aim.</p>
       </section>
 
-      {/* WE GROW TOGETHER SECTION */}
       <section className={styles.growTogether}>
         <div className={styles.growLeft}>
           <h2>
@@ -43,8 +41,6 @@ export default function PartnersSection() {
           </p>
         </div>
       </section>
-      {/* <Partners/> */}
-      
       <LabSection/>
       <BrandGrid/>
     </div>

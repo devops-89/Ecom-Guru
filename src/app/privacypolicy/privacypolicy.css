@@ -1,0 +1,148 @@
+.privacyTop-header {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    height: auto;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.privacyTop-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.03) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.03) 50%,
+            rgba(255, 255, 255, 0.03) 75%,
+            transparent 75%);
+    background-size: 20px 20px;
+    opacity: 0.5;
+}
+
+.privacyTop-header-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.page-title {
+    font-size: 4.9rem;
+    font-weight: 900;
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+.privacy-wrapper {
+    width: 85%;
+    margin: 0 auto;
+    padding: 110px 0;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 300;
+    color: #ccc;
+    max-width: 75%;
+}
+
+.privacyTop {
+    max-width: 95%;
+    width: 100%;
+    margin: 5% 0% 0% 2%;
+}
+
+.privacyTop h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #212529;
+    line-height: 26px;
+    margin-bottom: 1%;
+    text-transform: uppercase;
+
+}
+
+.privacyTop h3 {
+    font-size: 14px;
+    font-weight: 900;
+    color: #212529;
+    line-height: 26px;
+    margin-bottom: 1%;
+}
+
+.privacyTop p {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    font-family: 'Segoe UI';
+    margin: 0px 0px 16px;
+}
+
+.privacyTop ol,
+ul li {
+    margin-left: 3%;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    font-family: 'Segoe UI';
+    margin-bottom: 2%;
+}
+
+@media (max-width: 1024px) {
+    .privacyTop-header {
+        padding: 100px 0 60px;
+        min-height: 80vh;
+    }
+
+    .page-title {
+        font-size: 3.5rem;
+    }
+
+    .page-subtitle {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .privacyTop-header {
+        padding: 80px 0 50px;
+        min-height: 60vh;
+    }
+
+    .page-title {
+        font-size: 36px;
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .privacyTop-header {
+        padding: 60px 0 40px;
+        min-height: 50vh;
+    }
+
+    .page-title {
+        font-size: 30px;
+    }
+}

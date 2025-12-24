@@ -1,5 +1,4 @@
-
- .services {
+.services {
   display: flex;
   justify-content: space-between;
   padding: 110px 80px;
@@ -7,29 +6,30 @@
   gap: 40px;
 }
 
-/* LEFT TEXT */
 .services-left {
   width: 35%;
 }
 
 .services-left h2 {
-  font-size: 40px;
-  font-weight: 900;
+  font-size: 45px;
+  font-weight: 800;
+  font-family: 'Segoe UI';
   color: #212529;
   line-height: 1.1;
   margin: 0px 0px 40px;
 }
 
 .services-left h6 {
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: 300;
+  font-family: 'Segoe UI';
   color: #808080;
-  /* line-height: 1.7;
-  width: 90%; */
+  line-height: 1.9;
+  /* width: 90%; */
   margin: 0px 0px 8px;
   
 }
 
-/* RIGHT SIDE GRID */
 .services-right {
   width: 60%;
   display: flex;
@@ -40,47 +40,66 @@
 .services-row {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  gap: 35px;
 }
 
 .service-card {
-  width: 25%;
+  width: 30%;
   text-align: left;
 }
 
 .service-icon {
-  width: 65px;
+  width: 50px;
   margin-bottom: 15px;
 }
 
 .service-card h4{
-  /* font-size: 18px;
-  font-weight: 900; */
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'Segoe UI';
   color: #212529;
-  /* line-height: 1.3; */
+  line-height: 1.3;
   margin:0px 0px 5px;
 }
 
 .service-card p {
-  /* font-size: 15px; */
+  font-size: 14px;
+  font-weight: 400;
   color: #212529;
+  font-family: 'Segoe UI';
   /* line-height: 1.6; */
   margin:0px 0px 25px;
   /* width: 95%; */
 }
 
 .service-card a {
+  position: relative;
   color: #FFD94A;
+  font-family: 'dered Segoe UI';
   font-size:   12px;
+  font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.5px;
+  display: inline-block;
 }
 
-.service-card a:hover {
-  text-decoration: underline;
+/* hover for underline */
+.service-card a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 1px;
+  background: #000;
+  transition: width 0.5s ease;
 }
 
-/* RESPONSIVE */
+.service-card a:hover::after {
+  width: 100%;
+}
+
+/* responsive */
 @media (max-width: 1100px) {
   .services {
     flex-direction: column;

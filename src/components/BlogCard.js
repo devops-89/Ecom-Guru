@@ -7,7 +7,6 @@ export default function BlogCard({ title, description, image, link = "#" }) {
     return (
         <div className="blog-card">
             <div className="blog-image-container">
-                {/* Placeholder for image if not provided */}
                 {image ? (
                     <img src={image} alt={title} className="blog-image" />
                 ) : (

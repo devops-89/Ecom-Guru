@@ -1,9 +1,17 @@
 // PartnersSection.jsx - 2 COLUMN GRID
 "use client";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 import Image from "next/image";
 import "./partners.css";
+import { useEffect } from "react";
 
 export default function PartnersSection() {
+
+  useEffect(() => {
+       AOS.init({ duration: 1000 }); 
+     }, []);
+
   return (
     <section className="partnersWrapper">
 

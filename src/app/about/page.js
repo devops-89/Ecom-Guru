@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./about.module.css";
-import LeftBar from "@/components/LeftBar";
+import LeftBar from "@/components/LeftBar";                                       
 import HeroLayout from "@/components/HeroLayout";
 import Partners from "./partnerss";
 import BrandGrid from "@/components/BrandGrid/BrandGrid";
@@ -12,7 +12,7 @@ export default function AboutPage() {
       <LeftBar></LeftBar>
       <HeroLayout></HeroLayout>
       <section className={styles.heroSection}>
-        <h1>About</h1>
+        <h2>About</h2>
         <p>The eComguru has got the sales you need in your e-commerce business</p>
       </section>
 
@@ -22,12 +22,12 @@ export default function AboutPage() {
           <h2>
             LOOKING FOR 10X <br /> GROWTH?
           </h2>
-
-          <p>
+            
+          <h6>
             Need help growing your eCommerce business? Search no more,
             The eComguru is here with what you need. Together, let’s expand your
             business and accelerate your sales.
-          </p>
+          </h6>
         </div>
 
         <div className={styles.right}>
@@ -52,7 +52,6 @@ export default function AboutPage() {
       </section>
         <Partners/>
         <BrandGrid/>
-      
     </div>
   );
 }
