@@ -11,8 +11,7 @@ export default function ServicesSection() {
   return (
     <div className={styles.serviceSection}>
 
-      <LeftBar/>
-      <HeroLayout/>
+      <LeftBar />
       <section className={styles.heroSection}>
         <h2>Services</h2>
         <p>
@@ -24,7 +23,7 @@ export default function ServicesSection() {
         <div className={styles.left}>
           <h2>360° SALES SOLUTIONS</h2>
           <p>
-            The eComguru is the perfect partner to help grow your e-commerce business. 
+            The eComguru is the perfect partner to help grow your e-commerce business.
             We offer a full range of services and pride ourselves on getting results.
           </p>
         </div>
@@ -32,21 +31,21 @@ export default function ServicesSection() {
         <div className={styles.right}>
           <p>
             The eComguru is known for winning a crowded D2C consumer market.
-             We share our knowledge gained from our e-commerce consulting practices
-              and create a perfect win-win situations for the e-commerce businesses, 
-              as it makes shopping easier and convenient for the customers. 
-              We you are ready for your e-commerce business; ...
+            We share our knowledge gained from our e-commerce consulting practices
+            and create a perfect win-win situations for the e-commerce businesses,
+            as it makes shopping easier and convenient for the customers.
+            We you are ready for your e-commerce business; ...
           </p>
 
           <p>
             The eComguru team will be happy to guide you and assist you choosing an
-             e-commerce platform best-suited for your business objectives and budget expectations,
-              and customize it to exceptionally meet your specific needs.
+            e-commerce platform best-suited for your business objectives and budget expectations,
+            and customize it to exceptionally meet your specific needs.
           </p>
 
         </div>
       </section>
-       <div className={styles.horizontalLine}></div>
+      <div className={styles.horizontalLine}></div>
       <Services />
       <CaseStudies />
       <BrandGrid />

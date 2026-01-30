@@ -5,9 +5,9 @@
 
 
 .blog-header {
-    background-color: #000;
+    background-color: #1a1919;
     color: #fff;
-    min-height: 100vh;
+    min-height: 80vh;
     height: auto;
     padding: 120px 0 80px;
     position: relative;
@@ -20,16 +20,11 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(45deg,
-            rgba(255, 255, 255, 0.03) 25%,
-            transparent 25%,
-            transparent 50%,
-            rgba(255, 255, 255, 0.03) 50%,
-            rgba(255, 255, 255, 0.03) 75%,
-            transparent 75%,
-            transparent);
-    background-size: 20px 20px;
-    opacity: 0.5;
+    background: url("/images/blogs/lines.png") repeat;
+    background-size: auto;
+    opacity: 1;
+    filter: brightness(1.2);
+    pointer-events: none;
 }
 
 .blog-header-content {

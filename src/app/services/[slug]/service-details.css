@@ -1,0 +1,211 @@
+.service-page {
+    min-height: 100vh;
+    background-color: #fff;
+    /* Ensure the whole page has white bg after header */
+}
+
+/* 1. Black Hero Section */
+.service-header {
+    background-color: #000;
+    color: #fff;
+    min-height: 80vh;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.service-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.03) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.03) 50%,
+            rgba(255, 255, 255, 0.03) 75%,
+            transparent 75%,
+            transparent);
+    background-size: 20px 20px;
+    opacity: 0.5;
+}
+
+.service-header-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.page-title {
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #fff;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.page-subtitle {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #ccc;
+    max-width: 800px;
+}
+
+/* 2. Content Sections - White Background */
+.service-content-wrapper {
+    background-color: #fff;
+    color: #000;
+    padding-bottom: 100px;
+}
+
+.serviceSection {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 120px auto 0;
+    padding: 0 20px;
+}
+
+.left {
+    width: 45%;
+}
+
+.left h2 {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: #212529;
+    text-transform: uppercase;
+}
+
+.left h6 {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #666;
+}
+
+.right {
+    width: 50%;
+}
+
+.right p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.horizontalLine {
+    max-width: 1200px;
+    height: 1px;
+    background: #ebebeb;
+    margin: 80px auto;
+}
+
+.bottom-text {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.bottom-text p {
+    margin-bottom: 25px;
+}
+
+.bottom-text b {
+    color: #000;
+}
+
+/* Not Found View */
+.service-not-found {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .page-title {
+        font-size: 3.5rem;
+    }
+
+    .serviceSection {
+        margin-top: 80px;
+        gap: 30px;
+    }
+
+    .left h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-header {
+        min-height: 60vh;
+        padding: 100px 0 60px;
+    }
+
+    .page-title {
+        font-size: 42px;
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+    }
+
+    .serviceSection {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .left h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .horizontalLine {
+        margin: 60px auto;
+    }
+
+    .bottom-text {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 32px;
+    }
+
+    .left h2 {
+        font-size: 24px;
+    }
+
+    .left h6,
+    .right p,
+    .bottom-text {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}

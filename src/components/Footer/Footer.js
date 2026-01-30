@@ -1,26 +1,28 @@
 "use client";
 import "./Footer.css";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { SERVICES } from "@/assets/generic-data";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-bg">
-        <img 
-          src="./images/hero-bg.gif" 
+        <img
+          src="/images/hero-bg.gif"
           className="footer-bg-gif"
-          alt="footer bg" 
+          alt="footer bg"
         />
-      </div> 
+      </div>
 
       <div className="footer-content">
         {/* LEFT COLUMN */}
         <div className="footer-left">
           <img src="/images/logo.png" className="footer-logo" alt="logo" />
           <p className="footer-about">
-            The eCom Guru is one stop 360 degree business solution for your brand. We are 
-            brand scientists – a team of passionate, strategic thinkers and incredible 
-            data driven artists, who take craft of sales seriously. We combine strategy, 
+            The eCom Guru is one stop 360 degree business solution for your brand. We are
+            brand scientists – a team of passionate, strategic thinkers and incredible
+            data driven artists, who take craft of sales seriously. We combine strategy,
             art and technology to launch and enhance brand & sales in our lab.
           </p>
         </div>
@@ -29,13 +31,11 @@ export default function Footer() {
         <div className="footer-center">
           <h3>SERVICES</h3>
           <ul>
-            <li><a href="./channelSalesManagement">Channel Sales Management</a></li>
-            <li><a href="./catalogManagement">Catalogue Management</a></li>
-            <li><a href="./inventoryManagement">Inventory Management</a></li>
-            <li><a href="./managePricingOffersDiscountAndSales">Manage Pricing, Offers, Discount and Sales</a></li>
-            <li><a href="./campaignManagement">Campaign Management</a></li>
-            <li><a href="./partnerValueAddedServiceManagement">Partner Value added Service Management</a></li>
-            <li><a href="./brandVisibilityManagement">Brand Visibility Management</a></li>
+            {SERVICES.map((service) => (
+              <li key={service.id}>
+                <Link href={`/services/${service.slug}`}>{service.title}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="footer-left-line"></div>
@@ -43,12 +43,12 @@ export default function Footer() {
         <div className="footer-right">
           <h3>QUICK LINKS</h3>
           <ul>
-            <li><a href="./contact">Contact Us</a></li>
-            <li><a href="./careers">Careers</a></li>
-            <li><a href="./blog">Blog</a></li>
-            <li><a href="./faq">FAQ</a></li>
-            <li><a href="./termsofuse">Terms of Use</a></li>
-            <li><a href="./privacypolicy">Privacy Policy</a></li>
+            <li><Link href="/contact">Contact Us</Link></li>
+            <li><Link href="/careers">Careers</Link></li>
+            <li><Link href="/blog">Blog</Link></li>
+            <li><Link href="/faq">FAQ</Link></li>
+            <li><Link href="/termsofuse">Terms of Use</Link></li>
+            <li><Link href="/privacypolicy">Privacy Policy</Link></li>
           </ul>
         </div>
       </div>
