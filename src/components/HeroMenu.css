@@ -9,6 +9,18 @@
   z-index: 3000;
 }
 
+.header img {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.header img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
 .menuBtn {
   background: none;
   border: none;

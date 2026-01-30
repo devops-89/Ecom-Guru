@@ -113,9 +113,9 @@ export default function HeroLayout({ children }) {
 
       {!menuOpen && (
         <header className="header">
-          <Link href="/">
+          <a href="/" onClick={(e) => handleLinkClick(e, "/")}>
             <Image src="/images/logo.png" alt="logo" width={220} height={50} />
-          </Link>
+          </a>
 
           <button className="menuBtn" onClick={openMenu}>
             MENU

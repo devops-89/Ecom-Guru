@@ -36,10 +36,10 @@
   z-index: 2;
   width: 100%;
   padding: 0 80px;
-  margin: 120px 80 80px;
+  margin: 120px 80px 80px;
   display: grid;
   grid-template-columns: 1fr auto 1fr auto 1fr;
-  column-gap: 80px;
+  column-gap: 100px;
   align-items: start;
   box-sizing: border-box;
 }
@@ -50,6 +50,15 @@
 .footer-logo {
   width: 180px;
   margin-bottom: 22px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 .footer-about {
@@ -65,7 +74,10 @@
   width: 2px;
   background: #fff;
   height: 140px;
-  margin-top: 40px;
+  margin-top: 20px;
+}
+.footer-center {
+  width: 70%;
 }
 
 .footer-center h3,
