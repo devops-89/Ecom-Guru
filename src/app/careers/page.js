@@ -2,11 +2,10 @@
 import React, { useState } from "react";
 import "./careers.css";
 import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
 
 export default function CareersPage() {
     return (
-    <HeroLayout>
+    <>
       <LeftBar />
 
       <section className="careersTop-header">
@@ -25,6 +24,6 @@ export default function CareersPage() {
             </p>
         </section>
      
-    </HeroLayout>
+    </>
   );
 }

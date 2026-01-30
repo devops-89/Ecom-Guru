@@ -2,11 +2,10 @@
 import React from "react";
 import "./redChief.css";
 import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
 
 export default function redChief() {
     return (
-        <HeroLayout>
+        <>
         <LeftBar/>
             <div className="redChief-page">
                 {/* Black Header Section */}
@@ -74,6 +73,6 @@ export default function redChief() {
                     </div>
                 </div>
             </div>
-        </HeroLayout>
+        </>
     );
 }

@@ -1,3 +1,5 @@
+"use client";
+import { useEffect } from "react";
 import Hero from "@/components/Hero/Hero";
 import Services from "@/components/Services/Services";
 import LabSection from "@/components/LabSection/LabSection";

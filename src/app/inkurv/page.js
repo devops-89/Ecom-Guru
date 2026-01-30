@@ -2,11 +2,10 @@
 import React from "react";
 import "./inkurv.css";
 import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
 
 export default function Inkurv() {
     return (
-        <HeroLayout>
+        <>
         <LeftBar/>
             <div className="inkurv-page">
                 <div className="inkurv-header">
@@ -66,6 +65,6 @@ export default function Inkurv() {
                     </div>
                 </div>
             </div>
-        </HeroLayout>
+        </>
     );
 }

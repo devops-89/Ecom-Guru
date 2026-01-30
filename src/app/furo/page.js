@@ -2,11 +2,10 @@
 import React from "react";
 import "./furo.css";
 import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
 
 export default function furo() {
     return (
-        <HeroLayout>
+        <>
         <LeftBar/>
             <div className="furo-page">
                 <div className="furo-header">
@@ -69,6 +68,6 @@ export default function furo() {
                     </div>
                 </div>
             </div>
-        </HeroLayout>
+        </>
     );
 }

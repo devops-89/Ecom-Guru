@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import "./faq.css";
 import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
 
 export default function FaqPage() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -138,7 +137,7 @@ export default function FaqPage() {
 
 
   return (
-    <HeroLayout>
+    <>
       <LeftBar />
 
       <section className="faqTop-header">
@@ -181,6 +180,6 @@ export default function FaqPage() {
           </div>
         ))}
       </section>
-    </HeroLayout>
+    </>
   );
 }

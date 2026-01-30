@@ -4,18 +4,32 @@
   padding: 90px 0;
 }
 
+.case-studies.is-split {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.case-studies.is-split .case-wrapper {
+  padding: 0 !important;
+}
+
+.case-studies.is-black {
+  background: #000;
+}
+
 .case-title {
-  font-size: 35px;
-  font-weight: 900;
+  font-size: 45px;
+  font-family: "Inter";
+  font-weight: 800;
   color: #ffffff;
   margin-bottom: 50px;
-  padding-left: 55px;
+  padding-left: 80px;
   text-align: left;
 }
 
 .case-wrapper {
-  width: 90%;
-  margin: auto;
+  width: 100%;
+  padding: 0 80px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 70px 30px;
@@ -55,9 +69,9 @@
 .case-name {
   position: absolute;
   bottom: 95px;
-  left: -30px;
+  left: 2px;
   color: #fff;
-  font-family: 'Segoe UI';
+  font-family: "Inter";
   font-size: 28px;
   font-weight: 800;
   text-transform: capitalize;
@@ -70,9 +84,9 @@
   position: absolute;
   bottom: 60px;
   left: 2px;
-  font-family: 'Fjalla One', sans-serif;
+  font-family: "Inter";
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 600;
   border-bottom: 2px solid #fff;
   display: none;
 }
@@ -82,10 +96,16 @@
 }
 
 .case-detail:hover {
-  color: #FFD94A;
+  color: #ffd94a;
 }
 
 /* responsive */
+@media (max-width: 1400px) {
+  .case-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 1024px) {
   .case-wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -97,10 +117,14 @@
 }
 
 @media (max-width: 768px) {
+  .case-studies {
+    padding: 60px 0;
+  }
 
   .case-title {
-    font-size: 28px;
+    font-size: 32px;
     padding-left: 25px;
+    margin-bottom: 30px;
   }
 
   .case-wrapper {
@@ -137,9 +161,18 @@
 }
 
 @media (max-width: 480px) {
+  .case-title {
+    font-size: 28px;
+    padding-left: 20px;
+  }
+
+  .case-wrapper {
+    padding: 0 20px;
+  }
+
   .case-card img {
     height: 240px;
-    max-width: 280px;
+    max-width: 100%;
   }
 
   .case-name {

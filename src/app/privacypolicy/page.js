@@ -2,11 +2,10 @@
 import React, { useState } from "react";
 import "./privacypolicy.css";
 import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
 
 export default function PrivacyPolicy() {
     return (
-    <HeroLayout>
+    <>
       <LeftBar />
 
       <section className="privacyTop-header">
@@ -52,6 +51,6 @@ your physical or electronic signature.</li>
             </p>
             </section>
      
-    </HeroLayout>
+    </>
   );
 }

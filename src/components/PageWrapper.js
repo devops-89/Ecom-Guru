@@ -6,12 +6,8 @@ export default function PageWrapper({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-      window.dispatchEvent(new Event("page-loaded")); 
-    }, 4000);
-
-    return () => clearTimeout(timer);
+    setLoading(false);
+    window.dispatchEvent(new Event("page-loaded"));
   }, []);
 
   if (loading) return <Loader />;

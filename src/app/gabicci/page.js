@@ -2,11 +2,10 @@
 import React from "react";
 import "./gabicci.css";
 import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
 
 export default function Gabicci() {
     return (
-        <HeroLayout>
+        <>
         <LeftBar/>
             <div className="gabicci-page">
                 <div className="gabicci-header">
@@ -62,6 +61,6 @@ export default function Gabicci() {
                     </div>
                 </div>
             </div>
-        </HeroLayout>
+        </>
     );
 }

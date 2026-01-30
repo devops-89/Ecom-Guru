@@ -1,8 +1,5 @@
-
 "use client";
-import 'aos/dist/aos.css';
-import AOS from 'aos';
-import './BrandGrid.css';
+import "./BrandGrid.css";
 import { useEffect } from "react";
 
 const brands = [
@@ -15,17 +12,12 @@ const brands = [
 ];
 
 export default function BrandGrid() {
-
   useEffect(() => {
     document.querySelectorAll(".brand-card").forEach((el, i) => {
       setTimeout(() => el.classList.add("show"), i * 150);
     });
   }, []);
 
-  useEffect(() => {
-        AOS.init({ duration: 1000 }); 
-      }, []);
-        
   return (
     <section className="brand-grid" data-aos="fade-up">
       <div className="brand-logos">

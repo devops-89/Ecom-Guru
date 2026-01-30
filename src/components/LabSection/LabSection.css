@@ -1,11 +1,11 @@
 .lab {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  padding: 80px;
+  padding: 80px 80px;
   overflow: hidden;
 }
 
@@ -14,7 +14,7 @@
   position: absolute;
   inset: 0;
   background: url("/images/lab-bg.jpg") center / cover no-repeat;
-  filter: brightness(0.35);
+  filter: brightness(0.2);
   z-index: 0;
 }
 
@@ -36,7 +36,8 @@
 /* image */
 .lab-image img {
   width: 100%;
-  max-width: 330px;
+  max-width: 400px;
+  left: 120px;
   border: 10px solid #fff;
   position: relative;
   /* ❗ absolute hata diya */
@@ -44,14 +45,14 @@
 
 /* text */
 .lab-text {
-  max-width: 420px;
+  max-width: 550px;
   color: #fff;
 }
 
 .lab-text h5 {
   color: #FFFFFF;
   font-size: 20px;
-  font-family: "Fjalla One", sans-serif;
+  font-family: "Inter", sans-serif;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
@@ -60,7 +61,7 @@
   color: #FFFFFF;
   font-size: 50px;
   font-weight: 800;
-  font-family: 'Segoe UI';
+  font-family: "Inter", sans-serif;
   margin-bottom: 25px;
 }
 
@@ -69,7 +70,7 @@
   font-size: 16px;
   line-height: 1.6;
   font-weight: 300;
-  font-family: 'Segoe UI';
+  font-family: "Inter", sans-serif;
   margin-bottom: 40px;
 }
 
@@ -97,7 +98,7 @@
 @media (max-width: 992px) {
   .lab {
     grid-template-columns: 1fr;
-    padding: 60px 30px;
+    padding: 60px 40px;
     gap: 50px;
     text-align: center;
     min-height: auto;
@@ -118,9 +119,9 @@
 }
 
 /* Mobile */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .lab {
-    padding: 40px 16px;
+    padding: 40px 25px;
     gap: 40px;
   }
 
@@ -137,12 +138,9 @@
     font-size: 28px;
   }
 
-  .lab-text p {
-    font-size: 14px;
+@media (max-width: 480px) {
+  .lab {
+    padding: 40px 20px;
   }
-
-  .take-look-btn {
-    padding: 14px 32px;
-    font-size: 13px;
-  }
+}
 }

@@ -8,22 +8,26 @@
   flex-direction: column;
   align-items: center;
   width: 40px;
-  border-radius: 0 12px 12px 0;
+  border-radius: 0 20px 20px 0;
 }
 
 /* Arrow Button */
 .arrowBtn {
   width: 100%;
-  height: 40px;
+  height: 48px;
   background: #000;
   border: none;
-  border-radius: 0 12px 0 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
+  border-radius: 0 20px 0 0;
+}
+
+.arrowIcon {
+  width: 22px;
+  height: 22px;
   color: #fff;
-  font-size: 22px;
 }
 
 /* Yellow Contact Section */
@@ -37,18 +41,18 @@
   align-items: center;
   text-decoration: none;
 }
-
 .mailIcon {
-  writing-mode: vertical-rl;
-  transform: rotate(270deg);
-  font-size: 15px;
-  color: #000;
+  width: 20px;
+  height: 20px;
+  color: #000; 
 }
+
 
 .text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-size: 12px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
   color: #000;
   margin-bottom: 10px;
   letter-spacing: 0.5px;
@@ -63,7 +67,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 4px 6px rgba(37, 211, 102, 0.5);
   cursor: pointer;
 }
 

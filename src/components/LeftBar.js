@@ -1,24 +1,27 @@
 "use client";
 import Image from "next/image";
 import styles from "./LeftBar.module.css";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+import { useRouter } from "next/navigation";
 export default function LeftBar() {
+  const router = useRouter();
   return (
     <aside className={styles.leftBar}>
-      {/* Top Black Arrow Button */}
-      <button className={styles.arrowBtn}>
-        <span>←</span>
+      {/* Arrow Button */}
+      <button className={styles.arrowBtn} onClick={() => router.back()}>
+        <ArrowLeftIcon className={styles.arrowIcon} />
       </button>
-      {/* 🔹Yellow Contact Section */}
-      <a className={styles.contactSection} href="#contact">
-       
+      {/* Contact Section */}
+      <a className={styles.contactSection} href="/contact">
         <span className={styles.text}>Contact Us</span>
-         <span className={styles.mailIcon}>✉</span>
+        <EnvelopeIcon className={styles.mailIcon} />
       </a>
 
-      {/* 🔹Green WhatsApp Button */}
+      {/* WhatsApp Button */}
       <a
         className={styles.whatsappBtn}
-        href="https://wa.me/9199999999"
+        href="https://wa.me/918800291352"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -29,7 +32,6 @@ export default function LeftBar() {
           height={32}
         />
       </a>
-
     </aside>
   );
 }

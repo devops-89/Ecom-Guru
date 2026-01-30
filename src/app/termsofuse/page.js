@@ -2,11 +2,10 @@
 import React, { useState } from "react";
 import "./termsofuse.css";
 import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
 
 export default function TermsofUse() {
     return (
-    <HeroLayout>
+    <>
       <LeftBar />
 
       <section className="termsTop-header">
@@ -201,6 +200,6 @@ export default function TermsofUse() {
             </p>
             </section>
      
-    </HeroLayout>
+    </>
   );
 }

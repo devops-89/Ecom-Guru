@@ -2,11 +2,10 @@
 import React from "react";
 import "./ausha.css";
 import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
 
 export default function Ausha() {
     return (
-        <HeroLayout>
+        <>
         <LeftBar/>
             <div className="ausha-page">
                 {/* Black Header Section */}
@@ -65,6 +64,6 @@ export default function Ausha() {
                     </div>
                 </div>
             </div>
-        </HeroLayout>
+        </>
     );
 }

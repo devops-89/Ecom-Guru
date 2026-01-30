@@ -1,8 +1,8 @@
 .header {
   position: absolute;
-  top: 20px;
-  left: 40px;
-  right: 40px;
+  top: 25px;
+  left: 80px;
+  right: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,77 +19,81 @@
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menuBtn:hover {
+  transform: scale(1.05);
+}
+
+.menuBtn:hover .hamburgerCircle {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffde39;
+  transform: scale(1.1);
+}
+
+.menuBtn:hover .hamburgerCircle span {
+  background: #ffde39;
 }
 
 .hamburgerCircle {
   width: 42px;
   height: 42px;
-  border: 0.1 solid #fff;
+  border: 1px solid #fff;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6px;
+  transition: all 0.3s ease;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .hamburgerCircle span {
   width: 18px;
   height: 2px;
   background: #fff;
+  transition: background 0.3s ease;
 }
 
 .rightSidebar {
   position: absolute;
   right: 35px;
-  top: 90px;
+  top: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: calc(100vh - 100px);
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   z-index: 2980;
 }
-
-
 
 .socialIcons {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 70px;
+  gap: 30px;
+  margin-top: -150px;
 }
+
 .socialIcons a {
   color: white;
   font-size: 1rem;
-  transition: transform 0.3s;
-}
-.socialIcons a:hover {
-  transform: translateY(-3px);
-}
-/* 
-.scrollDown {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  color: #fff;
+  transition: all 0.3s ease;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
 }
 
-.line {
-  width: 1px;
-  height: 80px;
-  background: #fff;
-  animation: scroll 1.8s infinite alternate;
+.socialIcons a:hover {
+  color: #ffde39;
+  transform: translateY(-3px) scale(1.1);
 }
 
-@keyframes scroll {
-  0% { height: 80px; }
-  100% { height: 120px; }
-} */
- .scrollDown {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+.scrollDown {
+  position: absolute;
+  bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,6 +103,8 @@
   font-weight: 500;
   color: white;
   white-space: nowrap;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
 .line {
   width: 1px;
@@ -107,21 +113,29 @@
   animation: scroll 2s infinite alternate;
 }
 @keyframes scroll {
-  0% { height: 80px; }
-  100% { height: 120px; }
+  0% {
+    height: 80px;
+  }
+  100% {
+    height: 120px;
+  }
 }
 
 .yellow-screen {
   position: fixed;
   inset: 0;
-  background: #FFDE39;
-  animation: slide 0.45s forwards;
+  background: #ffde39;
+  animation: slide 0.9s ease forwards;
   z-index: 3100;
 }
 
 @keyframes slide {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .menu-overlay {
@@ -131,11 +145,11 @@
   opacity: 0;
   visibility: hidden;
   z-index: 3200;
-  transition: .4s;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
+  transition: 0.9s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .menu-overlay.show {
@@ -144,46 +158,55 @@
 }
 
 .menuList {
-  list-style:none;
-  text-align:center;
-  padding:0;
+  list-style: none;
+  text-align: center;
+  padding: 0;
 }
 
 .menuList li {
   margin: 15px 0;
 }
 
-.menuList a{
+.menuList a {
   font-size: 42px;
   font-weight: 900;
   color: #fff;
-  cursor:pointer;
-  transition:.3s;
-  position: relative;       /* added */
-  display: inline-block;    /* added */
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  display: inline-block;
 }
 
 .menuList a:hover {
-  color:#FFDE39;
+  color: #ffde39;
 }
 
 .closeBtn {
-  position:absolute;
-  top:30px;
-  right:55px;
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  background:none;
-  border:2px solid #fff;
-  font-size:35px;
-  color:#fff;
-  cursor:pointer;
+  position: absolute;
+  top: 30px;
+  right: 55px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: none;
+  border: 2px solid #ffde39;
+  font-size: 35px;
+  color: #ffde39;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
 }
 
 .mainContent {
-  z-index:1;
-  position:relative;
+  z-index: 1;
+  position: relative;
 }
 
 /* hover- for underline */
@@ -194,7 +217,7 @@
   bottom: -6px;
   width: 0%;
   height: 3px;
-  background: #FFDE39;
+  background: #ffde39;
   transition: width 0.5s ease;
 }
 
@@ -205,8 +228,8 @@
 /* responsive */
 @media (max-width: 1024px) {
   .header {
-    left: 25px;
-    right: 25px;
+    left: 40px;
+    right: 40px;
   }
 
   .menuList a {
@@ -221,8 +244,8 @@
 @media (max-width: 768px) {
   .header {
     top: 15px;
-    left: 20px;
-    right: 20px;
+    left: 25px;
+    right: 25px;
   }
 
   .hamburgerCircle {

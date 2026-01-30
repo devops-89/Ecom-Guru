@@ -1,7 +1,7 @@
 .brand-grid {
   width: 100%;
   background: #fff;
-  padding: 60px 20px;
+  padding: 80px 80px;
   box-sizing: border-box;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .brand-card {
-  flex: 1 1 ;
+  flex: 1 1;
   max-width: 210px;
   height: 100px;
   background: #fff;
@@ -58,25 +58,32 @@
   align-items: center;
   opacity: 0;
   text-transform: uppercase;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 600;
   transform: translateY(20px);
   transition: 0.4s ease;
 }
 
 .brand-card:hover p {
+  color: #31363a;
   opacity: 1;
   transform: translateY(0);
 }
 
 /* responsive */
 @media (max-width: 1024px) {
+  .brand-grid {
+    padding: 60px 40px;
+  }
   .brand-card {
     flex: 1 1 180px;
   }
 }
 
 @media (max-width: 768px) {
+  .brand-grid {
+    padding: 50px 25px;
+  }
   .brand-card {
     flex: 1 1 140px;
     height: 90px;
@@ -84,8 +91,11 @@
 }
 
 @media (max-width: 480px) {
+  .brand-grid {
+    padding: 40px 20px;
+  }
   .brand-card {
-    flex: 1 1 90%;
+    flex: 1 1 calc(50% - 15px);
     height: 80px;
   }
 }

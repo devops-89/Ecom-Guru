@@ -2,11 +2,10 @@
 import React from "react";
 import "./perf.css";
 import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
 
 export default function PerfPage() {
     return (
-        <HeroLayout>
+        <>
         <LeftBar/>
             <div className="perf-page">
                 <div className="perf-header">
@@ -68,6 +67,6 @@ export default function PerfPage() {
                     </div>
                 </div>
             </div>
-        </HeroLayout>
+        </>
     );
 }
