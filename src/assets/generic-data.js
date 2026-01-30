@@ -1,4 +1,8 @@
+
+//blog posts
+
 export const BLOG_POSTS = [
+
   {
     id: 1,
     slug: "mastering-cash-out-options-denmark",
