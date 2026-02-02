@@ -28,8 +28,8 @@
 }
 .partnersGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;  
-  gap: 80px 60px;                   
+  grid-template-columns: 1fr 1fr;
+  gap: 80px 60px;
   width: 100%;
   max-width: 1200px;
 }
@@ -57,11 +57,11 @@
   line-height: 1.5;
   font-weight: 400;
   color: #ffffff;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 @media (max-width: 900px) {
   .partnersGrid {
-    grid-template-columns: 1fr;     
+    grid-template-columns: 1fr;
     gap: 60px;
   }
   .partnersWrapper {
@@ -81,5 +81,39 @@
   }
   .partnerCard {
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .partnersWrapper {
+    padding: 60px 25px;
+  }
+
+  .partnersHeader h2 {
+    font-size: 32px;
+    text-align: left;
+  }
+
+  .partnersHeader p {
+    text-align: left;
+  }
+
+  .partnersGrid {
+    gap: 40px;
+  }
+
+  .partnerLogo {
+    max-width: 180px;
+    margin: 0; /* Align left */
+  }
+
+  .partnerCard {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .partnerText {
+    text-align: left; /* Better readability */
+    font-size: 15px;
   }
 }

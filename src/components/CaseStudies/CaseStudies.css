@@ -2,6 +2,7 @@
   width: 100%;
   background: #000;
   padding: 90px 0;
+  overflow-x: hidden;
 }
 
 .case-studies.is-split {
@@ -118,64 +119,70 @@
 
 @media (max-width: 768px) {
   .case-studies {
-    padding: 60px 0;
+    padding: 60px 45px 60px 25px !important; /* Avoid sidebar overlap */
+    width: 100% !important;
   }
 
   .case-title {
-    font-size: 32px;
-    padding-left: 25px;
-    margin-bottom: 30px;
+    font-size: 58px !important;
+    padding-left: 0 !important;
+    margin-bottom: 40px !important;
+    line-height: 1.1 !important;
+    text-align: left !important;
   }
 
   .case-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    padding: 0 !important;
+    gap: 50px !important;
   }
 
   .case-card {
-    align-items: center;
-    /* 🔥 center cards */
-    text-align: center;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
   }
 
   .case-card img {
-    width: 100%;
-    max-width: 320px;
-    height: 300px;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16/10;
+    border-radius: 4px;
   }
 
   .case-name {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    margin-top: 15px;
-    font-size: 20px;
+    position: relative !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    margin-top: 20px !important;
+    font-size: 24px !important;
+    color: #fff !important;
+    display: block !important;
   }
 
   .case-detail {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    margin-top: 6px;
-    display: block;
+    position: relative !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    margin-top: 10px !important;
+    display: inline-block !important;
+    font-size: 13px !important;
+    border-bottom: 1.5px solid #ffd94a !important;
+    color: #ffd94a !important;
   }
 }
 
 @media (max-width: 480px) {
   .case-title {
-    font-size: 28px;
-    padding-left: 20px;
-  }
-
-  .case-wrapper {
-    padding: 0 20px;
-  }
-
-  .case-card img {
-    height: 240px;
-    max-width: 100%;
+    font-size: 32px !important;
   }
 
   .case-name {
-    font-size: 18px;
+    font-size: 20px !important;
+  }
+
+  .case-detail {
+    font-size: 12px !important;
   }
 }

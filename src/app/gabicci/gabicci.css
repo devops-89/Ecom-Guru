@@ -1,183 +1,192 @@
 .gabicci-page {
-    min-height: 100vh;
+  min-height: 100vh;
+  background-color: #fff;
+  color: #000;
 }
 
 .gabicci-header {
-    background-color: #000;
-    color: #fff;
-    min-height: 100vh;
-    padding: 120px 0 80px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+  position: relative;
+  min-height: 60vh;
+  height: auto;
+  background: #131314;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 80px;
+  color: #fff;
+  overflow: hidden;
 }
 
 .gabicci-header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(45deg,
-            rgba(255, 255, 255, 0.03) 25%,
-            transparent 25%,
-            transparent 50%,
-            rgba(255, 255, 255, 0.03) 50%,
-            rgba(255, 255, 255, 0.03) 75%,
-            transparent 75%,
-            transparent);
-    background-size: 20px 20px;
-    opacity: 0.5;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/banner/lines.png");
+  background-repeat: repeat;
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 .gabicci-header-content {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    position: relative;
-    z-index: 1;
-}
-
-.breadcrumb {
-    font-size: 14px;
-    color: #aaa;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    display: block;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .page-title {
-    font-size: 4.9rem;
-    font-weight: 900;
-    margin-bottom: 10px;
-    color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 88px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #fff;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .page-subtitle {
-    font-size: 18px;
-    line-height: 27px;
-    font-weight: 300;
-    color: #ccc;
-    max-width: 65%;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 300;
+  color: #fff;
+  max-width: 50%;
 }
 
 .gabicciTop {
-    margin-bottom: 120px;
-    max-width: 1200px;
-    width: 100%;
-    margin: 10% 0px 10% 1%;
+  margin-bottom: 120px;
+  width: 100%;
+  margin: 10% 0px 10% 1%;
 }
 
 .gabicciTop h2 {
-    font-size: 45px;
-    font-weight: 800;
-    line-height: 54px;
-    margin-bottom: 3%;
-    text-transform: uppercase;
-
+  font-family: "Inter", sans-serif;
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #1a1919;
 }
 
 .gabicciTop p {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    font-family: 'Segoe UI';
-    margin: 0px 0px 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .bannerImg {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .gabicci-grid {
-    display: flex;
-    margin: 2%;
-    gap: 2.5%;
+  display: flex;
+  margin: 2%;
+  gap: 2.5%;
 }
 
 .gabicci01 {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .gabicci02 {
-    width: 100%;
+  width: 100%;
 }
 
 .gabicci-containGrid {
-    display: flex;
+  display: flex;
 }
 
 .gabicci-containGrid h2 {
-    font-size: 45px;
-    text-transform: uppercase;
-    margin-bottom: 7%;
-    color: #212529;
-    line-height: 54px;
-    font-weight: 800;
+  font-family: "Inter", sans-serif;
+  font-size: 45px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  color: #1a1919;
+  line-height: 1.2;
+  font-weight: 800;
 }
 
 .gabicci-containGrid h6 {
-    color: #808080;
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 30px;
+  font-family: "Inter", sans-serif;
+  color: #333;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .gabicci-grid01 {
-    margin: 15% 0% 11% 2%;
-    max-width: 40%;
+  margin: 15% 0% 11% 2%;
+  max-width: 40%;
 }
 
 .gabicci-grid02 h2 {
-    margin-left: 50%;
+  margin-left: 50%;
 }
 
 .gabicci-grid02 h6 {
-    margin-left: 20%;
+  margin-left: 20%;
 }
 
 /* responsive */
 @media (max-width: 1024px) {
-    .page-title {
-        font-size: 3.5rem;
-    }
+  .page-title {
+    font-size: 3.5rem;
+  }
 
-    .page-subtitle {
-        max-width: 80%;
-    }
+  .page-subtitle {
+    max-width: 80%;
+  }
 
-    .gabicciSection {
-        margin-top: 120px;
-    }
+  .gabicciSection {
+    margin-top: 120px;
+  }
 }
 
 @media (max-width: 768px) {
-    .gabicci-header {
-        min-height: auto;
-        padding: 80px 0 60px;
-    }
+  .gabicci-header {
+    min-height: 50vh;
+    padding: 160px 25px 80px;
+  }
 
-    .page-title {
-        font-size: 42px;
-    }
+  .page-title {
+    font-size: 42px;
+  }
 
-    .page-subtitle {
-        font-size: 16px;
-        max-width: 100%;
-    }
+  .page-subtitle {
+    font-size: 16px;
+    max-width: 100%;
+  }
 
-    .gabicciSection {
-        flex-direction: column;
-        margin: 100px 30px 0;
-    }
-
+  .gabicciSection {
+    flex-direction: column;
+    margin: 100px 30px 0;
+  }
 }
 
 @media (max-width: 480px) {
-    .page-title {
-        font-size: 30px;
-    }
+  .gabicci-header {
+    padding: 150px 20px 60px !important;
+  }
+  .page-title {
+    font-size: 30px;
+  }
 
+  .gabicciTop {
+    padding: 0 25px;
+    margin: 60px 0;
+  }
 
+  .gabicciTop h2,
+  .gabicci-containGrid h2 {
+    font-size: 32px !important;
+  }
+
+  .gabicciTop p,
+  .gabicci-containGrid h6 {
+    font-size: 15px;
+  }
 }

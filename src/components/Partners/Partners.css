@@ -95,50 +95,54 @@
 
 @media (max-width: 768px) {
   .partners {
-    padding: 60px 25px 80px;
+    padding: 60px 45px 80px 20px !important;
     text-align: left;
+    width: 100%;
+    overflow-x: hidden;
   }
 
+  .partners-title span {
+    font-size: 58px;
+    line-height: 1.1;
+    display: block;
+  }
+
+  .partners-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+    margin-top: 40px;
+    width: 100% !important;
+  }
+
+  .partner-card {
+    width: 100% !important;
+    height: 100px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .partner-card img {
+    max-width: 75px !important;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
   .partners-title span {
     font-size: 32px;
   }
 
   .partners-row {
-    justify-content: center;
-    gap: 18px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
   }
 
   .partner-card {
-    width: 180px;
-    height: 80px;
+    height: 90px !important;
   }
 
   .partner-card img {
-    max-width: 55px;
-  }
-}
-
-@media (max-width: 480px) {
-  .partners {
-    padding: 50px 20px 60px;
-  }
-
-  .partners-title span {
-    font-size: 28px;
-  }
-
-  .partners-row {
-    gap: 15px;
-  }
-
-  .partner-card {
-    width: 100%;
-    max-width: 260px;
-    height: 75px;
-  }
-
-  .partner-card img {
-    max-width: 50px;
+    max-width: 65px !important;
   }
 
   .partner-card p {

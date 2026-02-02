@@ -257,12 +257,22 @@
   .header {
     top: 15px;
     left: 25px;
-    right: 25px;
+    right: 15px;
+  }
+
+  .header img {
+    width: 160px;
+    height: auto;
+  }
+
+  .menuBtn {
+    font-size: 12px;
+    gap: 8px;
   }
 
   .hamburgerCircle {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
   }
 
   .hamburgerCircle span {

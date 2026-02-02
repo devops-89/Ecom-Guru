@@ -140,17 +140,51 @@
   }
 
   .services-left h2 {
-    font-size: 32px;
+    font-size: 58px;
+    line-height: 1.15;
+  }
+
+  .services-left h6 {
+    font-size: 15px;
   }
 
   .services-row {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 25px;
+  }
+
+  .service-card h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
 }
 
 @media (max-width: 480px) {
   .services {
     padding: 50px 20px 60px;
+  }
+
+  .services-left h2 {
+    font-size: 32px;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-card h4 {
+    font-size: 16px;
   }
 }

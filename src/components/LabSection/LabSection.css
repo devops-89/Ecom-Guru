@@ -40,7 +40,6 @@
   left: 120px;
   border: 10px solid #fff;
   position: relative;
-  /* ❗ absolute hata diya */
 }
 
 /* text */
@@ -50,7 +49,7 @@
 }
 
 .lab-text h5 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 20px;
   font-family: "Inter", sans-serif;
   margin-bottom: 10px;
@@ -58,7 +57,7 @@
 }
 
 .lab-text h2 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 50px;
   font-weight: 800;
   font-family: "Inter", sans-serif;
@@ -66,7 +65,7 @@
 }
 
 .lab-text p {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 16px;
   line-height: 1.6;
   font-weight: 300;
@@ -88,7 +87,7 @@
 
 .take-look-btn:hover {
   background: rgba(0, 0, 0, 0.8);
-  color: #FFDE39;
+  color: #ffde39;
   border-color: #fff;
 }
 
@@ -121,26 +120,49 @@
 /* Mobile */
 @media (max-width: 768px) {
   .lab {
-    padding: 40px 25px;
+    padding: 60px 50px 60px 25px; /* Added right padding for sidebar */
     gap: 40px;
   }
 
   .lab-image img {
-    max-width: 220px;
+    max-width: 250px;
     border-width: 6px;
+    left: 0; /* Clear desktop offset */
+    margin: 0 auto;
   }
 
   .lab-text h5 {
-    font-size: 16px;
+    font-size: 15px;
+    margin-bottom: 8px;
   }
 
   .lab-text h2 {
-    font-size: 28px;
+    font-size: 58px;
+    line-height: 1.15;
+    margin-bottom: 20px;
   }
+
+  .lab-text p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .take-look-btn {
+    padding: 15px 35px;
+  }
+}
 
 @media (max-width: 480px) {
   .lab {
-    padding: 40px 20px;
+    padding: 50px 45px 50px 20px;
   }
-}
+
+  .lab-text h2 {
+    font-size: 32px;
+  }
+
+  .lab-image img {
+    max-width: 200px;
+  }
 }

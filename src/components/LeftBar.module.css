@@ -34,7 +34,7 @@
 .contactSection {
   width: 100%;
   height: 150px;
-  background: #FFDE39;
+  background: #ffde39;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,15 +44,14 @@
 .mailIcon {
   width: 20px;
   height: 20px;
-  color: #000; 
+  color: #000;
 }
-
 
 .text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-size: 13px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #000;
   margin-bottom: 10px;
   letter-spacing: 0.5px;
@@ -62,7 +61,7 @@
 .whatsappBtn {
   width: 40px;
   height: 40px;
-  background: #25D366;
+  background: #25d366;
   border-radius: 0 0 12px 0;
   display: flex;
   justify-content: center;
@@ -77,13 +76,36 @@
     left: auto;
     right: 0;
     border-radius: 12px 0 0 12px;
+    width: 35px;
   }
 
   .arrowBtn {
     border-radius: 12px 0 0 0;
+    height: 42px;
+  }
+
+  .arrowIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contactSection {
+    height: 130px;
+  }
+
+  .mailIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .text {
+    font-size: 11px;
+    margin-bottom: 8px;
   }
 
   .whatsappBtn {
+    width: 35px;
+    height: 35px;
     border-radius: 0 0 0 12px;
   }
 }

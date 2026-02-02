@@ -82,20 +82,53 @@
 
 @media (max-width: 768px) {
   .brand-grid {
-    padding: 50px 25px;
+    padding: 60px 45px 80px 20px !important;
+    width: 100% !important;
+    overflow-x: hidden;
   }
+
+  .brand-logos {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
   .brand-card {
-    flex: 1 1 140px;
-    height: 90px;
+    max-width: 100% !important;
+    height: 110px !important;
+    border-radius: 8px !important;
+  }
+
+  .brand-card img {
+    height: 85px !important;
+    max-width: 80% !important;
+    object-fit: contain;
+  }
+
+  .brand-card p {
+    font-size: 16px !important;
   }
 }
 
 @media (max-width: 480px) {
   .brand-grid {
-    padding: 40px 20px;
+    padding: 50px 45px 60px 20px !important;
   }
+
+  .brand-logos {
+    gap: 12px !important;
+  }
+
   .brand-card {
-    flex: 1 1 calc(50% - 15px);
-    height: 80px;
+    height: 95px !important;
+  }
+
+  .brand-card img {
+    height: 70px !important;
+  }
+
+  .brand-card p {
+    font-size: 14px !important;
   }
 }
