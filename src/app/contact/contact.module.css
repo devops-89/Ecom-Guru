@@ -129,10 +129,10 @@
 
 .label {
   font-family: "Inter", sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #333;
 }
 
 .required {
@@ -142,26 +142,27 @@
 
 .input {
   width: 100%;
-  padding: 14px 16px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  font-size: 14px;
-  background: #fcfcfc;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  background: transparent;
   color: #000;
   outline: none;
   transition: all 0.3s ease;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .input::placeholder {
-  color: #ccc;
-  font-size: 13px;
+  color: #aaa;
+  font-size: 14px;
   font-weight: 400;
 }
 
 .input:focus {
-  border-color: #aaa;
-  background: #fff;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  border-color: #000;
+  background: transparent;
+  box-shadow: none;
 }
 
 .inputError {
@@ -191,7 +192,7 @@
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 0;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -283,4 +284,15 @@
   .contactInfo h2 {
     font-size: 32px;
   }
+}
+
+/* Hide numeric spinners */
+.contactForm input::-webkit-outer-spin-button,
+.contactForm input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.contactForm input[type="number"] {
+  -moz-appearance: textfield;
 }

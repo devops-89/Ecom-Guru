@@ -22,11 +22,29 @@ const contactSchema = Yup.object().shape({
 
   category: Yup.string(),
 
-  currentSalesFigure: Yup.string(),
+  currentSalesFigure: Yup.string()
+    .matches(/^[0-9]*$/, "Please enter a valid number")
+    .test(
+      "maxLimit",
+      "Limit reached",
+      (val) => !val || Number(val) <= 1000000000,
+    ),
 
-  averageSalesPrice: Yup.string(),
+  averageSalesPrice: Yup.string()
+    .matches(/^[0-9]*$/, "Please enter a valid number")
+    .test(
+      "maxLimit",
+      "Limit reached",
+      (val) => !val || Number(val) <= 1000000000,
+    ),
 
-  targetSales: Yup.string(),
+  targetSales: Yup.string()
+    .matches(/^[0-9]*$/, "Please enter a valid number")
+    .test(
+      "maxLimit",
+      "Limit reached",
+      (val) => !val || Number(val) <= 1000000000,
+    ),
 });
 
 export default contactSchema;
