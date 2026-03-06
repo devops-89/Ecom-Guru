@@ -16,6 +16,8 @@
   background: url("/images/lab-bg.jpg") center / cover no-repeat;
   filter: brightness(0.2);
   z-index: 0;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 /* columns */
