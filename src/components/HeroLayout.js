@@ -171,7 +171,7 @@ export default function HeroLayout({ children }) {
       <audio ref={clickSound} src="/sounds/link.mp3" />
 
       <header className="header">
-        <Image src="/images/logo.png" alt="logo" width={160} height={40} />
+        <Image src="/images/logo.png" alt="logo" width={230} height={45} />
 
         {!menuOpen && (
           <button className="menuBtn" onClick={openMenu}>

@@ -1,5 +1,4 @@
 import "./loader.css";
-import { useEffect, useState } from "react";
 
 export default function Loader() {
   const handleWhiteBox = () => {
@@ -18,7 +17,7 @@ export default function Loader() {
 
         {/* typing loading */}
         <p className="typing-text">Please wait</p>
-
+        
       </div>
     </div>
   );

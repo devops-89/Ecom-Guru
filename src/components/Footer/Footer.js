@@ -59,7 +59,7 @@ export default function Footer() {
           <FaFacebookF /> <FaTwitter /> <FaInstagram /> <FaLinkedinIn />
         </div>
         <p className="copyright">
-          © 2025 Digixito Media Private Limited
+          © {new Date().getFullYear()} Digixito Media Private Limited
         </p>
       </div>
     </footer>

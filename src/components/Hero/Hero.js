@@ -2,26 +2,34 @@
 import HeroLayout from "../HeroLayout";
 import LeftBar from "../LeftBar";
 import "./Hero.css";
-// import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Hero() {
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const hero = document.querySelector(".hero");
-  //     if (!hero) return;
+  const stripRef = useRef(null);
 
-  //     const scrollY = window.scrollY;
-  //     const heroHeight = window.innerHeight;
+  useEffect(() => {
 
-  //     let opacity = 1 - scrollY / heroHeight;
-  //     if (opacity < 0) opacity = 0;
+  const handleMouseMove = (e) => {
 
-  //     hero.style.opacity = opacity;
-  //   };
+    if (!stripRef.current) return;
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+    const x = (window.innerWidth / 2 - e.clientX) / 12;
+    const y = (window.innerHeight / 2 - e.clientY) / 12;
+
+    stripRef.current.style.transform =
+      `translate(${x}px, ${y}px)`;
+  };
+
+  window.addEventListener("mousemove", handleMouseMove);
+
+  return () => {
+    window.removeEventListener(
+      "mousemove",
+      handleMouseMove
+    );
+  };
+
+}, []);
 
   return (
     <>
@@ -35,10 +43,11 @@ export default function Hero() {
             alt="animated-bg"
           />
           <img
+          ref={stripRef}
             src="/images/mob-banner.png"
             className="hero-strip"
             alt="banner"
-          />  
+          />
         </div>
       </section>
     </>

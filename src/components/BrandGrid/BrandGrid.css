@@ -37,6 +37,14 @@
   transform: translateY(0);
 }
 
+.brand-text {
+  color: #212529;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 32px;
+  transform: translateY(-10px);
+}
+
 .brand-card img {
   height: 80px;
   filter: grayscale(100%);
