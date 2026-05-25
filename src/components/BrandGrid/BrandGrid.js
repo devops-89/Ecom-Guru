@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import './BrandGrid.css';
 import { useEffect } from "react";
+import Image from 'next/image';
 
 const brands = [
   { name: "red chief", img: "/images/icons/ecom01.webp" },
@@ -23,15 +24,15 @@ export default function BrandGrid() {
   }, []);
 
   useEffect(() => {
-        AOS.init({ duration: 1000 }); 
+        AOS.init({ duration: 1000 });
       }, []);
         
   return (
-    <section className="brand-grid" data-aos="fade-up">
+    <section className="brand-grid flex justify-center gap-10 p-0" data-aos="fade-up">
       <div className="brand-logos">
         {brands.map((b, i) => (
-          <div key={i} className="brand-card">
-            <img src={b.img} alt={b.name} />
+          <div key={i} className="brand-card bg-white">
+            <Image src={b.img} alt={b.name} width={90} height={60} />
             <p className="brand-text">{b.name}</p>
           </div>
         ))}

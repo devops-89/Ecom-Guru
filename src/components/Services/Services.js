@@ -3,7 +3,7 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import './Services.css';
 import { useEffect } from 'react';
-import { SERVICES } from '@/assets/generic-data';
+import { SERVICES } from '../../assets/generic-data';
 import Link from 'next/link';
 
 export default function Services() {

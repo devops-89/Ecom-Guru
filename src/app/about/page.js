@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
 import styles from "./about.module.css";
-import LeftBar from "@/components/LeftBar";                                       
-import HeroLayout from "@/components/HeroLayout";
+import LeftBar from "../../components/LeftBar";                                       
+import HeroLayout from "../../components/HeroLayout";
 import Partners from "./partnerss";
-import BrandGrid from "@/components/BrandGrid/BrandGrid";
+import BrandGrid from "../../components/BrandGrid/BrandGrid";
 export default function AboutPage() {
   return (
     <div className={styles.aboutPage}>

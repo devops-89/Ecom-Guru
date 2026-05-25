@@ -1,7 +1,7 @@
 import "./globals.css";
-import Footer from "@/components/Footer/Footer";
-import PageWrapper from "@/components/PageWrapper";
-import HeroLayout from "@/components/HeroLayout";
+import Footer from "../../src/components/Footer/Footer";
+import PageWrapper from "../../src/components/PageWrapper";
+import HeroLayout from "../../src/components/HeroLayout";
 
 export const metadata = {
   title: "The EcomGuru",

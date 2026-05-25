@@ -2,11 +2,11 @@
 "use client";
 import Image from "next/image";
 import styles from "./services.module.css";
-import Services from "@/components/Services/Services";
-import CaseStudies from "@/components/CaseStudies/CaseStudies";
-import BrandGrid from "@/components/BrandGrid/BrandGrid";
-import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
+import Services from "../../components/Services/Services";
+import CaseStudies from "../../components/CaseStudies/CaseStudies";
+import BrandGrid from "../../components/BrandGrid/BrandGrid";
+import LeftBar from "../../components/LeftBar";
+import HeroLayout from "../../components/HeroLayout";
 export default function ServicesSection() {
   return (
     <div className={styles.serviceSection}>

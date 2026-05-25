@@ -1,115 +1,13 @@
-// "use client";
-// import "./HeroMenu.css";
-// import Image from "next/image";
-// import { useState, useRef } from "react";
-// import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-
-// const MENU_ITEMS = [
-//   { label: "Home", href: "/" },
-//   { label: "About", href: "/about" },
-//   { label: "Services", href: "/services" },
-//   { label: "Partners", href: "/partners" },
-//   { label: "Blog", href: "/blog" },
-//   { label: "Contact Us", href: "/contact" },
-// ];
-
-// const SOCIAL_ICONS = [FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn];
-
-// export default function HeroLayout({ children }) {
-//   const [yellow, setYellow] = useState(false);
-//   const [menuOpen, setMenuOpen] = useState(false);
-//   const clickSound = useRef(null);
-
-//   const openMenu = () => {
-//     clickSound.current?.play();
-//     setYellow(true);
-//     setTimeout(() => {
-//       setMenuOpen(true);
-//       document.body.style.overflow = "hidden";
-//     }, 450);
-//   };
-
-//   const closeMenu = () => {
-//     clickSound.current?.play();
-//     setMenuOpen(false);
-//     document.body.style.overflow = "auto";
-//     setTimeout(() => setYellow(false), 450);
-//   };
-
-//   const handleLinkClick = (e, url) => {
-//     e.preventDefault();
-//     clickSound.current?.play();
-//     closeMenu();
-//     setTimeout(() => {
-//       window.location.href = url;
-//     }, 600);
-//   };
-
-//   return (
-//     <>
-//       <audio ref={clickSound} src="/sounds/link.mp3" />
-
-//       <header className="header">
-//         <Image src="/images/logo.png" alt="logo" width={160} height={40} />
-
-//         {!menuOpen && (
-//           <button className="menuBtn" onClick={openMenu}>
-//             MENU
-//             <div className="hamburgerCircle">
-//               <span></span><span></span>
-//             </div>
-//           </button>
-//         )}
-//       </header>
-
-//       {!menuOpen && (
-//         <aside className="rightSidebar">
-//           <div className="socialIcons">
-//             {SOCIAL_ICONS.map((Icon, index) => (
-//               <a key={index}><Icon /></a>
-//             ))}
-//           </div>
-
-//           <div className="scrollDown">
-//             <span>SCROLL DOWN</span>
-//             <div className="line"></div>
-//           </div>
-//         </aside>
-//       )}
-
-//       {yellow && <div className="yellow-screen"></div>}
-
-//       <div className={`menu-overlay ${menuOpen ? "show" : ""}`}>
-//         <button className="closeBtn" onClick={closeMenu}>×</button>
-//         <ul className="menuList">
-//           {MENU_ITEMS.map((item) => (
-//             <li key={item.label}>
-//               <a onClick={(e) => handleLinkClick(e, item.href)}>{item.label}</a>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-      
-//       <main className="mainContent">{children}</main>
-//     </>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 import "./HeroMenu.css";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const MENU_ITEMS = [
   { label: "Home", href: "/" },
@@ -125,17 +23,70 @@ const SOCIAL_ICONS = [FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn];
 export default function HeroLayout({ children }) {
   const [yellow, setYellow] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
   const clickSound = useRef(null);
 
-  // added page loaded yellow screen animation
   useEffect(() => {
-    const runYellow = () => {
-      setYellow(true);
-      setTimeout(() => setYellow(false), 500);
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    const menu = menuRef.current;
+
+    if (!menu) return;
+
+    let currentX = 0;
+    let currentY = 0;
+    let targetX = 0;
+    let targetY = 0;
+    let currentScale = 1;
+    let targetScale = 1;
+
+    const speed = 0.1;
+
+    const animate = () => {
+      currentX += (targetX - currentX) * speed;
+      currentY += (targetY - currentY) * speed;
+      currentScale += (targetScale - currentScale) * speed;
+
+      menu.style.transform = `
+      translate(${currentX}px, ${currentY}px)
+      scale(${currentScale})
+    `;
+
+      requestAnimationFrame(animate);
     };
 
-    window.addEventListener("page-loaded", runYellow);
-    return () => window.removeEventListener("page-loaded", runYellow);
+    animate();
+
+    const handleMouseMove = (e) => {
+      const rect = menu.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const distanceX = e.clientX - centerX;
+      const distanceY = e.clientY - centerY;
+      const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+      if (distance < 200) {
+        targetX = distanceX * 0.18;
+        targetY = distanceY * 0.18;
+        targetScale = 1.35;
+      } else {
+        targetX = 0;
+        targetY = 0;
+        targetScale = 1;
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   const openMenu = () => {
@@ -143,7 +94,6 @@ export default function HeroLayout({ children }) {
     setYellow(true);
     setTimeout(() => {
       setMenuOpen(true);
-      document.body.style.overflow = "hidden";
       setYellow(false);
     }, 450);
   };
@@ -152,8 +102,6 @@ export default function HeroLayout({ children }) {
     clickSound.current?.play();
     setYellow(true);
     setMenuOpen(false);
-    document.body.style.overflow = "auto";
-
     setTimeout(() => setYellow(false), 450);
   };
 
@@ -170,24 +118,30 @@ export default function HeroLayout({ children }) {
     <>
       <audio ref={clickSound} src="/sounds/link.mp3" />
 
-      <header className="header">
+      <header className={`header ${menuOpen ? "menuOpen" : ""}`}>
         <Image src="/images/logo.png" alt="logo" width={230} height={45} />
 
-        {!menuOpen && (
-          <button className="menuBtn" onClick={openMenu}>
-            MENU
-            <div className="hamburgerCircle">
-              <span></span><span></span>
-            </div>
+        <div className="menuContainer">
+          <span className="menuText">{menuOpen ? "CLOSE" : "MENU"}</span>
+
+          <button
+            ref={menuRef}
+            className={`menuBtn hamburgerCircle ${menuOpen ? "active" : ""}`}
+            onClick={menuOpen ? closeMenu : openMenu}
+          >
+            <span className="topLine"></span>
+            <span className="bottomLine"></span>
           </button>
-        )}
+        </div>
       </header>
 
       {!menuOpen && (
         <aside className="rightSidebar">
           <div className="socialIcons">
             {SOCIAL_ICONS.map((Icon, index) => (
-              <a key={index}><Icon /></a>
+              <a key={index}>
+                <Icon />
+              </a>
             ))}
           </div>
 
@@ -201,7 +155,6 @@ export default function HeroLayout({ children }) {
       {yellow && <div className="yellow-screen"></div>}
 
       <div className={`menu-overlay ${menuOpen ? "show" : ""}`}>
-        <button className="closeBtn" onClick={closeMenu}>×</button>
         <ul className="menuList">
           {MENU_ITEMS.map((item) => (
             <li key={item.label}>

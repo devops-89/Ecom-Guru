@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import "./blog.css";
-import BlogCard from "@/components/BlogCard";
-import HeroLayout from "@/components/HeroLayout";
-import LeftBar from "@/components/LeftBar";
-import { BLOG_POSTS } from "@/assets/generic-data";
+import BlogCard from "../../components/BlogCard";
+import HeroLayout from "../../components/HeroLayout";
+import LeftBar from "../../components/LeftBar";
+import { BLOG_POSTS } from "../../assets/generic-data";
 
 export default function BlogPage() {
     return (

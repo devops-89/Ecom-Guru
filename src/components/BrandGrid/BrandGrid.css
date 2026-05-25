@@ -1,25 +1,25 @@
 .brand-grid {
   width: 100%;
-  background: #fff;
-  padding: 60px 20px;
+  background: #F9F9F9;
+  padding: 30px;
   box-sizing: border-box;
 }
 
 .brand-logos {
   width: 100%;
   max-width: 1200px;
-  margin: auto;
+  /* margin: auto; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  align-items: center;
+  gap: 50px;
 }
 
 .brand-card {
   flex: 1 1 ;
   max-width: 210px;
   height: 100px;
-  background: #fff;
   border-radius: 12px;
   display: flex;
   justify-content: center;

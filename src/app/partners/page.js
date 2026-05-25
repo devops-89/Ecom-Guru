@@ -1,10 +1,10 @@
 // app/partners/page.js  OR  components/PartnersSection.jsx
 "use client";
-import LeftBar from "@/components/LeftBar";
+import LeftBar from "../../components/LeftBar";
 import styles from "./partners.module.css";
-import HeroLayout from "@/components/HeroLayout";
-import BrandGrid from "@/components/BrandGrid/BrandGrid";
-import LabSection from "@/components/LabSection/LabSection";
+import HeroLayout from "../../components/HeroLayout";
+import BrandGrid from "../../components/BrandGrid/BrandGrid";
+import LabSection from "../../components/LabSection/LabSection";
 export default function PartnersSection() {
   return (
     <div className={styles.partnerSection}>
