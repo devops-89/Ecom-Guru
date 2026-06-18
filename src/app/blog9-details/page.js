@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import "./blog9.css";
-import LeftBar from "@/components/LeftBar";
-import HeroLayout from "@/components/HeroLayout";
+import LeftBar from "../../components/LeftBar";
+import HeroLayout from "../../components/HeroLayout";
 
 export default function Blog9() {
   return (

@@ -1,7 +1,7 @@
 "use client";
-import Image from "next/image";
+
 import styles from "./about.module.css";
-import LeftBar from "../../components/LeftBar";                                       
+import LeftBar from "../../components/LeftBar";
 import HeroLayout from "../../components/HeroLayout";
 import Partners from "./partnerss";
 import BrandGrid from "../../components/BrandGrid/BrandGrid";

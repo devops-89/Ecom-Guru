@@ -26,68 +26,82 @@ export default function HeroLayout({ children }) {
   const menuRef = useRef(null);
   const clickSound = useRef(null);
 
+  // useEffect(() => {
+  //   document.body.style.overflow = menuOpen ? "hidden" : "auto";
+
+  //   return () => {
+  //     document.body.style.overflow = "auto";
+  //   };
+  // }, [menuOpen]);
+
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  const menu = menuRef.current;
+  if (!menu) return;
 
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [menuOpen]);
+  let frameId;
 
-  useEffect(() => {
-    const menu = menuRef.current;
+  let currentX = 0;
+  let currentY = 0;
+  let targetX = 0;
+  let targetY = 0;
+  let currentScale = 1;
+  let targetScale = 1;
 
-    if (!menu) return;
+  const speed = 0.1;
 
-    let currentX = 0;
-    let currentY = 0;
-    let targetX = 0;
-    let targetY = 0;
-    let currentScale = 1;
-    let targetScale = 1;
+  const animate = () => {
+    currentX += (targetX - currentX) * speed;
+    currentY += (targetY - currentY) * speed;
+    currentScale += (targetScale - currentScale) * speed;
 
-    const speed = 0.1;
+    menu.style.transform =
+      `translate(${currentX}px,${currentY}px)
+       scale(${currentScale})`;
 
-    const animate = () => {
-      currentX += (targetX - currentX) * speed;
-      currentY += (targetY - currentY) * speed;
-      currentScale += (targetScale - currentScale) * speed;
+    frameId=requestAnimationFrame(animate);
+  };
 
-      menu.style.transform = `
-      translate(${currentX}px, ${currentY}px)
-      scale(${currentScale})
-    `;
+  animate();
 
-      requestAnimationFrame(animate);
-    };
+  const handleMouseMove=(e)=>{
+    const rect=menu.getBoundingClientRect();
 
-    animate();
+    const centerX=rect.left+rect.width/2;
+    const centerY=rect.top+rect.height/2;
 
-    const handleMouseMove = (e) => {
-      const rect = menu.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      const distanceX = e.clientX - centerX;
-      const distanceY = e.clientY - centerY;
-      const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+    const distanceX=e.clientX-centerX;
+    const distanceY=e.clientY-centerY;
 
-      if (distance < 200) {
-        targetX = distanceX * 0.18;
-        targetY = distanceY * 0.18;
-        targetScale = 1.35;
-      } else {
-        targetX = 0;
-        targetY = 0;
-        targetScale = 1;
-      }
-    };
+    const distance=Math.sqrt(
+      distanceX*distanceX+
+      distanceY*distanceY
+    );
 
-    window.addEventListener("mousemove", handleMouseMove);
+    if(distance<200){
+      targetX=distanceX*0.18;
+      targetY=distanceY*0.18;
+      targetScale=1.35;
+    }else{
+      targetX=0;
+      targetY=0;
+      targetScale=1;
+    }
+  };
 
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+  window.addEventListener(
+    "mousemove",
+    handleMouseMove
+  );
+
+  return ()=>{
+    cancelAnimationFrame(frameId);
+
+    window.removeEventListener(
+      "mousemove",
+      handleMouseMove
+    );
+  };
+},[]);
 
   const openMenu = () => {
     clickSound.current?.play();
@@ -163,7 +177,9 @@ export default function HeroLayout({ children }) {
           ))}
         </ul>
       </div>
-      <main className="mainContent">{children}</main>
+      <main className={`mainContent ${
+    menuOpen ? "overflow-hidden h-screen" : ""
+  }`}>{children}</main>
     </>
   );
 }
