@@ -2,7 +2,7 @@
 import React from "react";
 import "./gabicci.css";
 import LeftBar from "@/components/LeftBar";
-import HeroLayout from "../../components/HeroLayout";
+import HeroLayout from "@/components/HeroLayout";
 
 export default function Gabicci() {
     return (
