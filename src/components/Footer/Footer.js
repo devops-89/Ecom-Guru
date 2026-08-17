@@ -1,7 +1,7 @@
 "use client";
 import "./Footer.css";
 import Image from "next/image";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPinterest } from "react-icons/fa";
 import { SERVICES } from "../../assets/generic-data";
 import Link from "next/link";
 
@@ -59,7 +59,11 @@ export default function Footer() {
       {/* SOCIAL + COPYRIGHT BOTTOM */}
       <div className="footer-bottom">
         <div className="footer-social">
-          <FaFacebookF /> <FaTwitter /> <FaInstagram /> <FaLinkedinIn />
+          <a href="https://www.facebook.com/onlinechannelsalessolution" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://x.com/theecomg" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+          <a href="https://www.instagram.com/onlinechannelsales/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+          <a href="https://in.linkedin.com/company/theecomguru" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+          <a href="https://in.pinterest.com/theecomguru_/" target="_blank" rel="noopener noreferrer"><FaPinterest /></a>
         </div>
         <p className="copyright">
           © {new Date().getFullYear()} Digixito Media Private Limited

@@ -7,6 +7,7 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
+  FaPinterest,
 } from "react-icons/fa";
 
 const MENU_ITEMS = [
@@ -18,7 +19,13 @@ const MENU_ITEMS = [
   { label: "Contact Us", href: "/contact" },
 ];
 
-const SOCIAL_ICONS = [FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn];
+const SOCIAL_ICONS = [
+  { icon: FaFacebookF, href: "https://www.facebook.com/onlinechannelsalessolution" },
+  { icon: FaTwitter, href: "https://x.com/theecomg" },
+  { icon: FaInstagram, href: "https://www.instagram.com/onlinechannelsales/" },
+  { icon: FaLinkedinIn, href: "https://in.linkedin.com/company/theecomguru" },
+  { icon: FaPinterest, href: "https://in.pinterest.com/theecomguru_/" },
+];
 
 export default function HeroLayout({ children }) {
   const [yellow, setYellow] = useState(false);
@@ -152,8 +159,8 @@ export default function HeroLayout({ children }) {
       {!menuOpen && (
         <aside className="rightSidebar">
           <div className="socialIcons">
-            {SOCIAL_ICONS.map((Icon, index) => (
-              <a key={index}>
+            {SOCIAL_ICONS.map(({ icon: Icon, href }, index) => (
+              <a key={index} href={href} target="_blank" rel="noopener noreferrer">
                 <Icon />
               </a>
             ))}
